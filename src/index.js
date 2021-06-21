@@ -2,12 +2,27 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+
+//link to our components (imports)
+import Home from './Home';
+
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <div>
+
+      {/* nav bar can go here */}
+
+      {/* Links to different components go here*/}
+      <Switch>
+        <Route exact path="/" component={Home}></Route>
+      </Switch>
+
+    </div>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
