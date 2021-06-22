@@ -1,0 +1,10 @@
+.indiv_pokemon_wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    justify-content: center;
+    margin: 10px
+}

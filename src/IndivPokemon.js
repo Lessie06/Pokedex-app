@@ -1,9 +1,8 @@
 import React from 'react'
-import {Component} from 'react'
-
-
+import { Component } from 'react'
+import './styling/IndivPokemon.css' 
 class IndivPokemon extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
 
         //state goes here. 
@@ -17,9 +16,11 @@ class IndivPokemon extends Component {
         alert("You've clicked the delete button!")
     }
 
-    render(){
-       return( <div class='indiv_pokemon_wrapper'>
-                <h1>I'm an individual pokemon</h1>
+    render() {
+        return (<div class='indiv_pokemon_wrapper'>
+            <div class='card'>
+                
+                <h3>I'm an individual pokemon</h3>
                 <b>{this.props.name}</b>
                 <p>{this.props.type}</p>
                 <p>{this.props.move}</p>
@@ -27,7 +28,8 @@ class IndivPokemon extends Component {
                 <p>Region: {this.props.region}</p>
                 <button onClick={this.handleEdit}>Edit</button><button onClick={this.handleDelete}>Delete</button>
             </div>
-       )
+        </div>
+        )
     }
 }
 

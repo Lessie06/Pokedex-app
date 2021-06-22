@@ -19,11 +19,11 @@ class Pokedex extends Component {
                     
                 
                 <br></br>
-                <p className='pokedex_descriptor'>Your Pokémon</p>
+                <p className='pokedex_descriptor'>Pokémon in your Pokdex</p>
 
-                <IndivPokemon name={'Pikachu'} />
-                <IndivPokemon name={'Squirtle'} />
-                <IndivPokemon name={'Charmander'} />
+                <IndivPokemon name={'Pikachu'} type={'Lightning'} move={'Thunderbolt'} ability={'None'} region={'kanto'} />
+                <IndivPokemon name={'Squirtle'} type={'Water'} move={'Watergun'} ability={"Swim"} region={'Kanto'} />
+                <IndivPokemon name={'Charmander'} type={'Fire'} move={'Fireball'} ability={'None'} region={'Kanto'} />
             </div>
        )
     }
