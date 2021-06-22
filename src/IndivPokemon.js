@@ -21,12 +21,13 @@ class IndivPokemon extends Component {
             <div class='card'>
                 
                 <h3>I'm an individual pokemon</h3>
+                <img src={this.props.image} id='indiv_pMon_image' class='indiv_pMon_img_contraints'/><br></br>
                 <b>{this.props.name}</b>
                 <p>{this.props.type}</p>
                 <p>{this.props.move}</p>
                 <p>{this.props.ability}</p>
                 <p>Region: {this.props.region}</p>
-                <button onClick={this.handleEdit}>Edit</button><button onClick={this.handleDelete}>Delete</button>
+                <button onClick={this.handleEdit} className='indiv_pMon_button indiv_pMon_button_right'>Edit</button><button className='indiv_pMon_button ' onClick={this.handleDelete}>Delete</button>
             </div>
         </div>
         )

@@ -1,10 +1,49 @@
 .indiv_pokemon_wrapper {
-    display: flex;
+    
     justify-content: center;
+}
+
+.indiv_pMon_image{
+  width: 100%;
+  border-radius: 12px;  
+  height: 214px;
+
+  object-fit: cover;
+}
+
+.indiv_pMon_img_contraints {
+  height: auto;
+  max-height: 250px;
+  width: auto;
+  max-width: 250px;
 }
 
 .card {
     background: white;
-    justify-content: center;
-    margin: 10px
+    padding: 8px;
+    margin: 10px;
+    border-radius: 12px;
+    border: 1px solid #BACDD8;
+}
+
+.indiv_pMon_button {
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+
+    font-weight: 300;
+    color: #0077FF;
+    background-color: #cbd3dc;
+    
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+}
+
+.indiv_pMon_button:focus, .indiv_pMon_button:hover {
+    background-color: #0077FF;
+    color: #cbd3dc;
+}
+
+.indiv_pMon_button_right {
+    
 }
