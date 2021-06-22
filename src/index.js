@@ -5,6 +5,7 @@ import App from './App';
 
 //link to our components (imports)
 import Home from './Home';
+import Pokedex from './Pokedex'
 
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 
@@ -19,6 +20,7 @@ ReactDOM.render(
       {/* Links to different components go here*/}
       <Switch>
         <Route exact path="/" component={Home}></Route>
+        <Route path='/Pokedex' component={Pokedex}></Route>
       </Switch>
 
     </div>
