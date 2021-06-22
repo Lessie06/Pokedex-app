@@ -1,7 +1,8 @@
 import React from 'react'
 import {Component} from 'react'
+import IndivPokemon from './IndivPokemon'
 import './styling/Pokedex.css'
-import './App.css'
+
 
 
 class Pokedex extends Component {
@@ -19,6 +20,10 @@ class Pokedex extends Component {
                 
                 <br></br>
                 <p className='pokedex_descriptor'>Your Pokémon</p>
+
+                <IndivPokemon name={'Pikachu'} />
+                <IndivPokemon name={'Squirtle'} />
+                <IndivPokemon name={'Charmander'} />
             </div>
        )
     }
