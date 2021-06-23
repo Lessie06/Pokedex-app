@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  margin: 0px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* #nav-bar{
+  background-color:#909497;
+  width:100%;
+ height:80px;
+ padding-top: 2px;
+ display:flex;
+ margin: 0; 
+ padding-bottom: 10px;
+ border:0
+ 
+             
+ /* background-image: url("https://img.rankedboost.com/wp-content/uploads/2017/09/Pokemon-GO-GEN-4-Pokedex.png") */
+ 
+
