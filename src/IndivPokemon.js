@@ -32,7 +32,9 @@ class IndivPokemon extends Component {
                 <p>{this.props.move}</p>
                 <p>{this.props.ability}</p>
                 <p>Region: {this.props.region}</p>
+                <form action="./UpdatePokemon">
                 <button onClick={this.handleEdit} className='indiv_pMon_button indiv_pMon_button_right'>Edit</button>
+                </form>
                 <button className='indiv_pMon_button ' onClick={this.handleDelete}>Delete</button>
             </div>
         </div>
