@@ -1,0 +1,41 @@
+.pokedex_wrapper{
+    background: beige ;
+
+}
+
+.floatLeft { float: left; }
+.floatRight { float: right; }
+
+#pokedx_pokeball{
+    image-rendering: auto;
+    max-width: 11%;
+    max-height: 11%;
+    /*transform: rotate(-10deg);*/
+    padding-left: 7%;
+    
+    
+}
+.pokedex_heading {
+ 
+    padding-top: 5%;
+    vertical-align: middle;
+    text-align: center; 
+    font-size: 450%;
+}
+#pokedex_evee_top_of_page {
+    max-width: 12%;
+    max-height: 12%;   
+    padding-right: 10%;
+}
+
+.pokedex_descriptor{
+    text-align: center;
+    font-weight: 250;
+    font-size: 140%;
+}
+
+.container_of_indiv_pokemon{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}

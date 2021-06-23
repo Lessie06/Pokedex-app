@@ -4,8 +4,13 @@ import "./index.css";
 import App from "./App";
 import './Search.css'
 //link to our components (imports)
+<<<<<<< HEAD
 import Home from "./Home";
 import SearchPage from "./SearchPage";
+=======
+import Home from './Home';
+import Pokedex from './Pokedex'
+>>>>>>> pokemon-pokedex-page
 
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 
@@ -30,8 +35,12 @@ ReactDOM.render(
       {/* Links to different components go here*/}
       <Switch>
         <Route exact path="/" component={Home}></Route>
+<<<<<<< HEAD
         <Route exact path="/Search" component={SearchPage} />
         <Route exact path="/AddPokemon" component={AddPokemon}/>
+=======
+        <Route path='/Pokedex' component={Pokedex}></Route>
+>>>>>>> pokemon-pokedex-page
       </Switch>
     </div>
   </BrowserRouter>,
