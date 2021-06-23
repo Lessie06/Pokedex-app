@@ -16,16 +16,41 @@ class AddPokemon extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   }
 
-  handleAddPokemon = (e) => {
+  handleAddPokemon = async(e) => {
     e.preventDefault();
     let name = document.getElementById("pokeName").value;
     let type = document.getElementById("pokeType").value;
     let move = document.getElementById("pokeMove").value;
-    console.log(name, type, move);
+    //console.log(name, type, move);
 
-    this.setState({ pokeName: document.getElementById("pokeName").value });
-    this.setState({ pokeType: document.getElementById("pokeType").value });
-    this.setState({ pokeMove: document.getElementById("pokeMove").value });
+    await this.setState({ pokeName: document.getElementById("pokeName").value });
+    await this.setState({ pokeType: document.getElementById("pokeType").value });
+    await this.setState({ pokeMove: document.getElementById("pokeMove").value });
+
+    let values =  this.state;
+
+    //console.log(values);
+
+    
+    (async () => {
+      //console.log(values);
+      const rawResponse = await fetch('http://localhost:5000/addPokemon', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+           'Content-type': 'application/json'
+        },
+        mode: 'cors',
+        body: JSON.stringify(values)
+      });
+      const content = await rawResponse.json();
+
+      //console.log(content);
+    })();
+    
+
+    alert("You've added the pokemon to the database")
+    //A redirect should occur now.
   };
 
   render() {
