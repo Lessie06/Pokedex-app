@@ -117,8 +117,10 @@ class AddPokemon extends React.Component {
         </div>
 
         <div className='show_pokemon_wrapper'>
-          <button onClick={this.handleShowPokemon}>Howdy</button>
-          {items}
+          <button onClick={this.handleShowPokemon} className='addpokemon_button'>Howdy</button>
+          <div className='item_containing_pokemon'>
+            {items}
+          </div>
         </div>
 
       </div>
