@@ -61,6 +61,20 @@ app.put('/updatePokemon', (req,res) =>{
 
 
 
+//used to show all pokemon AddPokemon.js
+app.get('/getAllPokemon', (req, res) => {
+     
+    pool.query("SELECT * from pokemon", (err, result) => {
+        if(err){
+            console.log(err);
+        }
+        else {
+            res.send(result)
+        }
+    })
+})
+
+
 app.listen(5000, () => {
     console.log("Your app is listening on port 5000")
 })

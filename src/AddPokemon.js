@@ -1,4 +1,6 @@
+import axios from "axios";
 import React from "react";
+import IndivPokemon from "./IndivPokemon.js";
 import './AddPokemon.css'
 
 class AddPokemon extends React.Component {
@@ -8,8 +10,10 @@ class AddPokemon extends React.Component {
       pokeName: "",
       pokeType: "",
       pokeMove: "",
+      listOfPokemon: []
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleShowPokemon = this.handleShowPokemon.bind(this)
   }
 
   handleChange(e) {
@@ -53,7 +57,24 @@ class AddPokemon extends React.Component {
     //A redirect should occur now.
   };
 
+
+  handleShowPokemon() {
+    axios.get('http://localhost:5000/getAllPokemon')
+    .then((responce) => {
+      console.log(responce.data.rows)
+
+      this.setState({listOfPokemon : responce.data.rows})
+    });
+  }
+
   render() {
+    let items = []
+    items = this.state.listOfPokemon.map((element) => (
+      
+      <IndivPokemon name={element.pokename} type={element.type} move={element.move} />
+
+    ));
+
     return (
       <div>
       
@@ -94,6 +115,14 @@ class AddPokemon extends React.Component {
           
           <img id="chikorita"src="http://pngimg.com/uploads/pokemon/pokemon_PNG45.png"></img>
         </div>
+
+        <div className='show_pokemon_wrapper'>
+          <button onClick={this.handleShowPokemon} className='addpokemon_button'>Howdy</button>
+          <div className='item_containing_pokemon'>
+            {items}
+          </div>
+        </div>
+
       </div>
     );
   }
