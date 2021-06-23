@@ -8,10 +8,10 @@ app.use(cors())
 app.use(bodyParser.json())
 
 const pool = new Pool({
-    user:"cruzgonzalez",
+    user:"postgres",
     host:"localhost",
-    database:"pokemon",
-    password:"Password",
+    database:"Pokedex",
+    password:"Lessie",
     port:"5432"
 });
 
@@ -36,6 +36,30 @@ app.post('/addPokemon', (req, res) => {
 
     )
 })
+
+
+app.put('/updatePokemon', (req,res) =>{
+    const id = req.body.id;
+    const name = req.body.changeName;
+    const move = req.body.changeMove;
+    const type = req.body.changeType;
+    console.log(id);
+    pool.query(
+        "UPDATE pokemon SET pokename = $1, move = $2, type = $3 WHERE id = $4", 
+        [name, move,type,id], 
+        (err,result) =>{
+            if(err){
+                console.log(err)
+            }else{
+                res.send(result);
+            }
+        }
+    )
+})
+
+
+
+
 
 app.listen(5000, () => {
     console.log("Your app is listening on port 5000")

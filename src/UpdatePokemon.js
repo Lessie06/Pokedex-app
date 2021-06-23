@@ -1,5 +1,5 @@
 import React from "react";
-import './styling/UpdatePokemon.css'
+import "./styling/UpdatePokemon.css";
 
 class UpdatePokemon extends React.Component {
   constructor(props) {
@@ -8,6 +8,7 @@ class UpdatePokemon extends React.Component {
       changeName: "",
       changeType: "",
       changeMove: "",
+      id: "",
     };
   }
 
@@ -15,25 +16,51 @@ class UpdatePokemon extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  editPokemon = (e) => {
+  editPokemon = async (e) => {
     e.preventDefault();
+    let id = document.getElementById("id").value;
     let editName = document.getElementById("editName").value;
     let editType = document.getElementById("editType").value;
     let editMove = document.getElementById("editMove").value;
-    console.log(editName, editType, editMove);
+    console.log(editName, editType, editMove, id);
 
-    this.setState({ changeMove: document.getElementById("editName").value });
-    this.setState({ changeType: document.getElementById("editType").value });
-    this.setState({ changeMove: document.getElementById("editMove").value });
+    await this.setState({ id: document.getElementById("id").value });
+    await this.setState({
+      changeName: document.getElementById("editName").value,
+    });
+    await this.setState({
+      changeType: document.getElementById("editType").value,
+    });
+    await this.setState({
+      changeMove: document.getElementById("editMove").value,
+    });
+
+    let values = this.state;
+    console.log(values);
+
+    fetch("http://localhost:5000/updatePokemon", {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(values),
+    });
   };
 
   render() {
     return (
       <div>
         <div id="pokemon-edit">
-        <img id="vaporeon" src="http://pngimg.com/uploads/pokemon/pokemon_PNG10.png"></img>
+          <img
+            id="vaporeon"
+            src="http://pngimg.com/uploads/pokemon/pokemon_PNG10.png"
+          ></img>
           <h1 id="h1">Edit Pokemon: </h1>
           <form id="edit-form">
+            <label>ID:</label>
+            <input id="id" type="number" onChange={this.handleChange}></input>
+            <br></br>
             <label id="name"> Update Name: </label>
             <br></br>
             <input
@@ -60,9 +87,11 @@ class UpdatePokemon extends React.Component {
             <br></br>
             <button onClick={this.editPokemon}>Update</button>
           </form>
-          <img id="gengar"src="http://pngimg.com/uploads/pokemon/pokemon_PNG29.png"></img>
+          <img
+            id="gengar"
+            src="http://pngimg.com/uploads/pokemon/pokemon_PNG29.png"
+          ></img>
         </div>
-        
       </div>
     );
   }

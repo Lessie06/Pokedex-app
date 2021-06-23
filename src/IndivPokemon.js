@@ -1,6 +1,7 @@
 import React from 'react'
 import { Component } from 'react'
-import './styling/IndivPokemon.css' 
+import './styling/IndivPokemon.css'
+import axios from 'axios'; 
 class IndivPokemon extends Component {
     constructor(props) {
         super(props)
@@ -8,8 +9,12 @@ class IndivPokemon extends Component {
         //state goes here. 
     }
 
+    
+
     handleEdit = () => {
         alert("You've clicked the edit button!")
+        
+
     }
 
     handleDelete = () => {
@@ -27,7 +32,8 @@ class IndivPokemon extends Component {
                 <p>{this.props.move}</p>
                 <p>{this.props.ability}</p>
                 <p>Region: {this.props.region}</p>
-                <button onClick={this.handleEdit} className='indiv_pMon_button indiv_pMon_button_right'>Edit</button><button className='indiv_pMon_button ' onClick={this.handleDelete}>Delete</button>
+                <button onClick={this.handleEdit} className='indiv_pMon_button indiv_pMon_button_right'>Edit</button>
+                <button className='indiv_pMon_button ' onClick={this.handleDelete}>Delete</button>
             </div>
         </div>
         )
