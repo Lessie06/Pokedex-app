@@ -1,0 +1,61 @@
+/* body{
+    text-align: center;
+} */
+
+#pokemon-add{
+    
+    text-align: center;
+    background-color: #B0F7BE;
+    padding-bottom: 46px;
+}
+
+input[type=text]{
+    width: 20%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 80px;
+    resize: vertical;
+  }
+button {
+    background-color:#B0D9F7  ;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    margin-bottom:20px;
+    /* margin-top: 10px; */
+  }
+  button:hover {
+    background-color:#1C7FA0;
+  }
+
+  #add-pokemon{
+      display:inline;
+      align-items: center;
+      margin-bottom: 10px;
+      
+      
+  }
+#name{
+   
+    text-align: center;
+    
+    /* margin-left: 100px; */
+}
+
+#h1{
+    padding-top:15px;
+}
+
+img{
+    background-color:#B0F7BE ;
+    width:8%;
+    margin-right: 1900px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#vaporeon{
+    margin-left: 1300px;
+}

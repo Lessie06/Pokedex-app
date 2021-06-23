@@ -3,6 +3,7 @@ import "./Search.css";
 import axios from "axios";
 import Search from "./Search";
 
+
 class SearchPage extends React.Component {
   constructor(props) {
     super(props);

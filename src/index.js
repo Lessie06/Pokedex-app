@@ -10,6 +10,7 @@ import SearchPage from "./SearchPage";
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 
 import reportWebVitals from "./reportWebVitals";
+import AddPokemon from "./AddPokemon";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -30,6 +31,7 @@ ReactDOM.render(
       <Switch>
         <Route exact path="/" component={Home}></Route>
         <Route exact path="/Search" component={SearchPage} />
+        <Route exact path="/AddPokemon" component={AddPokemon}/>
       </Switch>
     </div>
   </BrowserRouter>,
