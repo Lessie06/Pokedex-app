@@ -13,6 +13,7 @@ import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 
 import reportWebVitals from "./reportWebVitals";
 import AddPokemon from "./AddPokemon";
+import UpdatePokemon from "./UpdatePokemon";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -24,7 +25,7 @@ ReactDOM.render(
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/Search">Search</Link>
+            <Link to="/SearchPage">Search</Link>
           </li>
         </ul>
       </div>
@@ -35,6 +36,7 @@ ReactDOM.render(
         <Route exact path="/SearchPage" component={SearchPage} />
         <Route exact path="/AddPokemon" component={AddPokemon}/>
         <Route path='/Pokedex' component={Pokedex}></Route>
+        <Route exact path="/UpdatePokemon" component={UpdatePokemon}/>
       </Switch>
     </div>
   </BrowserRouter>,

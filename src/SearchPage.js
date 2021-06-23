@@ -3,7 +3,6 @@ import "./Search.css";
 import axios from "axios";
 import Search from "./Search";
 
-
 class SearchPage extends React.Component {
   constructor(props) {
     super(props);
@@ -36,7 +35,7 @@ class SearchPage extends React.Component {
 
           name: response.data.name,
           sprite: response.data.sprites.front_default,
-          type:response.data.types,
+          type: response.data.types,
           abilities: response.data.abilities,
         });
         console.log(this.state.type);
@@ -46,7 +45,7 @@ class SearchPage extends React.Component {
 
   render() {
     let display = (
-      <div >
+      <div>
         <h3> {this.state.name}</h3>
         <img src={this.state.sprite}></img>
         {/* <h3> {this.state.abilities} </h3> */}
@@ -54,24 +53,29 @@ class SearchPage extends React.Component {
         <h3></h3>
       </div>
     );
-    
+
     // let ability = this.state.abilities.map((i) => {<p> {i}</p>})
     let items = [];
-    items = this.state.abilities.map((ability,i) => <Search key={i} name = {ability.ability.name} />)
-    console.log(items)
+    items = this.state.abilities.map((ability, i) => (
+      <Search key={i} name={ability.ability.name} />
+    ));
+    console.log(items);
 
     let type = [];
-    type = this.state.type.map((type,i) => <Search key={i} name={type.type.name}/>)
-   
-   
+    type = this.state.type.map((type, i) => (
+      <Search key={i} name={type.type.name} />
+    ));
 
     return (
       <div>
         <div id="pokemon-search">
-          <div>
-            <h1 id="search-h1">Search Pokémon</h1>
-            {/* <img id="pokedex-img"  src="https://img.rankedboost.com/wp-content/uploads/2017/09/Pokemon-GO-GEN-4-Pokedex.png"></img> */}
-          </div>
+          <img
+            id="piplup"
+            src="http://pngimg.com/uploads/pokemon/pokemon_PNG85.png"
+          ></img>
+          <h1 id="search-h1">Search Pokémon</h1>
+          {/* <img id="pokedex-img"  src="https://img.rankedboost.com/wp-content/uploads/2017/09/Pokemon-GO-GEN-4-Pokedex.png"></img> */}
+
           <form id="search">
             <label>Search for Pokemon: </label>
             <br></br>
@@ -86,13 +90,16 @@ class SearchPage extends React.Component {
               Submit
             </button>
           </form>
-        </div>
-        <div id="pokemon-cards">
 
-          {display}
-          <p>{type}</p>
-         <p>  {items}</p> 
-          
+          <div id="pokemon-cards">
+            {display}
+            <p>{type}</p>
+            <p> {items}</p>
+          </div>
+          <img
+            id="cyndaquill"
+            src="http://pngimg.com/uploads/pokemon/pokemon_PNG49.png"
+          ></img>
         </div>
       </div>
     );

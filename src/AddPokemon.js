@@ -67,7 +67,7 @@ class AddPokemon extends React.Component {
             <br></br>
           </form>
           
-          <img id=""src=""></img>
+          <img id="chikorita"src="http://pngimg.com/uploads/pokemon/pokemon_PNG45.png"></img>
         </div>
       </div>
     );
