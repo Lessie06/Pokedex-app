@@ -3,11 +3,12 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import './Search.css'
-//link to our components (imports)
 
+//link to our components (imports)
 import SearchPage from "./SearchPage";
 import Home from './Home';
 import Pokedex from './Pokedex'
+import DeletePokemon from './DeletePokemon'
 
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 
@@ -37,6 +38,7 @@ ReactDOM.render(
         <Route exact path="/AddPokemon" component={AddPokemon}/>
         <Route path='/Pokedex' component={Pokedex}></Route>
         <Route exact path="/UpdatePokemon" component={UpdatePokemon}/>
+        <Route exact path="/DeletePokemon" component={DeletePokemon} />
       </Switch>
     </div>
   </BrowserRouter>,
