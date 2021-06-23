@@ -33,7 +33,7 @@ class AddPokemon extends React.Component {
       <div>
       
         <div id="pokemon-add" >
-        <img src="http://static.pokemonpets.com/images/monsters-images-800-800/7-Squirtle.png"></img>
+        <img id="squirtle" src="http://static.pokemonpets.com/images/monsters-images-800-800/7-Squirtle.png"></img>
           <h1 id="h1">Add Pokemon</h1>
           
           <form id="add-pokemon">
