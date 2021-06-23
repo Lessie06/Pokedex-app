@@ -20,7 +20,7 @@ class Home extends Component {
                         <a href='#' ><img src='https://media.glassdoor.com/sqll/9079/google-squarelogo-1441130773284.png' class='logo' /></a>
                         <ul>
                             <li><a href='#'><Link exact to="/">Home</Link></a> </li>
-                            <li><a href='#'><Link to='/Pokedex' >Podéx</Link></a></li>
+                            <li><a href='#'><Link to='/Pokedex' >Pokedéx</Link></a></li>
                             <li><a href='#'>Contact</a></li>
                             <li><a href='#'>About</a></li>
                         </ul>
