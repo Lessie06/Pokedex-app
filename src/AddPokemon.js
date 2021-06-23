@@ -21,7 +21,7 @@ class AddPokemon extends React.Component {
     let name = document.getElementById("pokeName").value;
     let type = document.getElementById("pokeType").value;
     let move = document.getElementById("pokeMove").value;
-    console.log(name, type, move);
+    //console.log(name, type, move);
 
     await this.setState({ pokeName: document.getElementById("pokeName").value });
     await this.setState({ pokeType: document.getElementById("pokeType").value });
@@ -29,7 +29,7 @@ class AddPokemon extends React.Component {
 
     let values =  this.state;
 
-    console.log(values);
+    //console.log(values);
 
     
     (async () => {
@@ -45,7 +45,7 @@ class AddPokemon extends React.Component {
       });
       const content = await rawResponse.json();
 
-      console.log(content);
+      //console.log(content);
     })();
     
 
