@@ -8,10 +8,10 @@ app.use(cors())
 app.use(bodyParser.json())
 
 const pool = new Pool({
-    user:"cruzgonzalez",
+    user:"postgres",
     host:"localhost",
-    database:"pokemon",
-    password:"Password",
+    database:"Pokedex",
+    password:"Lessie",
     port:"5432"
 });
 
