@@ -34,11 +34,11 @@ ReactDOM.render(
       {/* Links to different components go here*/}
       <Switch>
         <Route exact path="/" component={Home}></Route>
-        <Route exact path="/SearchPage" component={SearchPage} />
-        <Route exact path="/AddPokemon" component={AddPokemon}/>
+        <Route path="/SearchPage" component={SearchPage} />
+        <Route path="/AddPokemon" component={AddPokemon}/>
         <Route path='/Pokedex' component={Pokedex}></Route>
-        <Route exact path="/UpdatePokemon" component={UpdatePokemon}/>
-        <Route exact path="/DeletePokemon" component={DeletePokemon} />
+        <Route path="/UpdatePokemon" component={UpdatePokemon}/>
+        <Route path="/DeletePokemon" component={DeletePokemon} />
       </Switch>
     </div>
   </BrowserRouter>,
