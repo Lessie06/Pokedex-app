@@ -12,7 +12,7 @@ class AddPokemon extends React.Component {
       pokeType: "",
       pokeMove: "",
       listOfPokemon: [],
-      successful: null,
+      
     };
     this.handleChange = this.handleChange.bind(this);
     // this.handleShowPokemon = this.handleShowPokemon.bind(this)
@@ -27,52 +27,52 @@ class AddPokemon extends React.Component {
     let name = document.getElementById("pokeName").value;
     let type = document.getElementById("pokeType").value;
     let move = document.getElementById("pokeMove").value;
-    //console.log(name, type, move);
+    console.log(name, type, move);
 
-    this.setState({
-      pokeName: document.getElementById("pokeName").value,
-      pokeType: document.getElementById("pokeType").value,
-      pokeMove: document.getElementById("pokeMove").value,
-      
-    });
+    // this.setState({
+    //   pokeName: document.getElementById("pokeName").value,
+    //   pokeType: document.getElementById("pokeType").value,
+    //   pokeMove: document.getElementById("pokeMove").value,
+    // });
 
-    let values = this.state;
 
-    //console.log(values);
+
+    let values = {
+        pokeName: name,
+       pokeType: type,
+         pokeMove: move,
+       }
+
+    console.log(values);
 
     (async () => {
       //console.log(values);
       const rawResponse = await fetch("http://localhost:5000/addPokemon", {
         method: "POST",
         headers: {
-          Accept: "application/json",
+          'Accept': "application/json",
           "Content-type": "application/json",
         },
         mode: "cors",
         body: JSON.stringify(values),
+        
       });
 
       const content = await rawResponse.json();
 
-      //console.log(content);
-      this.props.history.push('/Pokedex')
+      // console.log(content);
+       this.props.history.push('/Pokedex')
+      // console.log(this.props.history)
+      
     })();
 
     alert("You've added the pokemon to the database");
-    //A redirect should occur now.
-
     
-
+    //A redirect should occur now.
   };
 
-  
-
   render() {
-    
-
-     if (this.state.successful) {
-      return <Redirect to={this.state.successful} />
-    }
+   
     return (
       <div>
         <div id="pokemon-add">
@@ -109,28 +109,16 @@ class AddPokemon extends React.Component {
             <br></br>
             <br></br>
 
-            
+            <button onClick={this.handleAddPokemon}>Submit</button>
 
-              <button onClick={this.handleAddPokemon}>Submit</button>
-           
-            {/* {this.state.successful ? <Redirect to="/Pokedex" /> : <null />} */}
-           
-            {/* {console.log(this.state.successful)} */}
             <br></br>
           </form>
-
+          {/* { this.props.history.push('/Pokedex')} */}
           <img
             id="chikorita"
             src="http://pngimg.com/uploads/pokemon/pokemon_PNG45.png"
           ></img>
         </div>
-
-        {/* <div className='show_pokemon_wrapper'>
-          <button onClick={this.handleShowPokemon} className='addpokemon_button'>Howdy</button>
-          <div className='item_containing_pokemon'> */}
-        {/* {items} */}
-        {/* </div>
-        </div> */}
       </div>
     );
   }
