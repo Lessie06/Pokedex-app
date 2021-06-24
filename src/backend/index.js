@@ -8,10 +8,10 @@ app.use(cors())
 app.use(bodyParser.json())
 
 const pool = new Pool({
-    user:"postgres",
+    user:"cruzgonzalez",
     host:"localhost",
-    database:"Pokedex",
-    password:"Lessie",
+    database:"pokemon",
+    password:"Password",
     port:"5432"
 });
 
@@ -58,7 +58,21 @@ app.put('/updatePokemon', (req,res) =>{
 })
 
 
+//used to delete a pokemon from the DB
+//[id] might have to be in brackets to avoid a syntax error.
+app.delete('/deletePokemon/:id', (req, res) => {
+    const id = req.params.id;
+    
+    pool.query('DELETE FROM pokemon WHERE id = $1', [id], (err, result) => {
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.send(result);
+        }
+    });
 
+});
 
 
 //used to show all pokemon AddPokemon.js
