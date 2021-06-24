@@ -51,7 +51,7 @@ class IndivPokemon extends Component {
                 
                 <h3>I'm an individual pokemon</h3>
                 <img src={this.props.image} id='indiv_pMon_image' class='indiv_pMon_img_contraints'/><br></br>
-                {isNaN(this.props.id) ? <div></div> : <p>ID:  {this.props.id + 1}</p>}
+                {isNaN(this.props.id) ? <div></div> : <p>ID:  {this.props.id}</p>}
                 <b>{this.props.name}</b>
                 <p>{this.props.type}</p>
                 <p>{this.props.move}</p>
