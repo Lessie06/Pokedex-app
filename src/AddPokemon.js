@@ -1,7 +1,8 @@
 import axios from "axios";
 import React from "react";
 import IndivPokemon from "./IndivPokemon.js";
-import './AddPokemon.css'
+import "./AddPokemon.css";
+import { Redirect } from "react-router-dom";
 
 class AddPokemon extends React.Component {
   constructor(props) {
@@ -10,7 +11,8 @@ class AddPokemon extends React.Component {
       pokeName: "",
       pokeType: "",
       pokeMove: "",
-      listOfPokemon: []
+      listOfPokemon: [],
+      
     };
     this.handleChange = this.handleChange.bind(this);
     // this.handleShowPokemon = this.handleShowPokemon.bind(this)
@@ -20,70 +22,67 @@ class AddPokemon extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   }
 
-  handleAddPokemon = async(e) => {
+  handleAddPokemon = async (e) => {
     e.preventDefault();
     let name = document.getElementById("pokeName").value;
     let type = document.getElementById("pokeType").value;
     let move = document.getElementById("pokeMove").value;
-    //console.log(name, type, move);
+    console.log(name, type, move);
 
-    await this.setState({ pokeName: document.getElementById("pokeName").value });
-    await this.setState({ pokeType: document.getElementById("pokeType").value });
-    await this.setState({ pokeMove: document.getElementById("pokeMove").value });
+    // this.setState({
+    //   pokeName: document.getElementById("pokeName").value,
+    //   pokeType: document.getElementById("pokeType").value,
+    //   pokeMove: document.getElementById("pokeMove").value,
+    // });
 
-    let values =  this.state;
 
-    //console.log(values);
 
-    
+    let values = {
+        pokeName: name,
+       pokeType: type,
+         pokeMove: move,
+       }
+
+    console.log(values);
+
     (async () => {
       //console.log(values);
-      const rawResponse = await fetch('http://localhost:5000/addPokemon', {
-        method: 'POST',
+      const rawResponse = await fetch("http://localhost:5000/addPokemon", {
+        method: "POST",
         headers: {
-          'Accept': 'application/json',
-           'Content-type': 'application/json'
+          'Accept': "application/json",
+          "Content-type": "application/json",
         },
-        mode: 'cors',
-        body: JSON.stringify(values)
+        mode: "cors",
+        body: JSON.stringify(values),
+        
       });
+
       const content = await rawResponse.json();
 
-      //console.log(content);
+      // console.log(content);
+       this.props.history.push('/Pokedex')
+      // console.log(this.props.history)
+      
     })();
-    
 
-    alert("You've added the pokemon to the database")
+    alert("You've added the pokemon to the database");
+    
     //A redirect should occur now.
   };
 
-
-  // handleShowPokemon() {
-  //   axios.get('http://localhost:5000/getAllPokemon')
-  //   .then((responce) => {
-  //     console.log(responce.data.rows)
-
-  //     this.setState({listOfPokemon : responce.data.rows})
-  //   });
-  // }
-
   render() {
-    // let items = []
-    // items = this.state.listOfPokemon.map((element) => (
-      
-    //   <IndivPokemon name={element.pokename} type={element.type} move={element.move} />
-
-    // ));
-
+   
     return (
       <div>
-      
-        <div id="pokemon-add" >
-        <img id="squirtle" src="http://static.pokemonpets.com/images/monsters-images-800-800/7-Squirtle.png"></img>
+        <div id="pokemon-add">
+          <img
+            id="squirtle"
+            src="http://static.pokemonpets.com/images/monsters-images-800-800/7-Squirtle.png"
+          ></img>
           <h1 id="h1">Add Pokemon</h1>
-          
+
           <form id="add-pokemon">
-          
             <label id="name">Pokemon Name: </label>
             <br></br>
             <input
@@ -92,7 +91,7 @@ class AddPokemon extends React.Component {
               onChange={this.handleChange}
             ></input>
             <br></br>
-            <label id="name" > Type: </label>
+            <label id="name"> Type: </label>
             <br></br>
             <input
               id="pokeType"
@@ -109,20 +108,17 @@ class AddPokemon extends React.Component {
             ></input>
             <br></br>
             <br></br>
+
             <button onClick={this.handleAddPokemon}>Submit</button>
+
             <br></br>
           </form>
-          
-          <img id="chikorita"src="http://pngimg.com/uploads/pokemon/pokemon_PNG45.png"></img>
+          {/* { this.props.history.push('/Pokedex')} */}
+          <img
+            id="chikorita"
+            src="http://pngimg.com/uploads/pokemon/pokemon_PNG45.png"
+          ></img>
         </div>
-
-        {/* <div className='show_pokemon_wrapper'>
-          <button onClick={this.handleShowPokemon} className='addpokemon_button'>Howdy</button>
-          <div className='item_containing_pokemon'> */}
-            {/* {items} */}
-          {/* </div>
-        </div> */}
-
       </div>
     );
   }

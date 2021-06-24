@@ -39,3 +39,9 @@
     justify-content: center;
     flex-wrap: wrap;
 }
+
+#display-pokemon{
+    margin: 0 auto; 
+    display: block;
+    margin-bottom: 15px;
+}
