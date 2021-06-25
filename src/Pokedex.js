@@ -63,10 +63,10 @@ class Pokedex extends Component {
           className="pdex_banner floatRight"
           src="https://assets.webiconspng.com/uploads/2017/09/Pokemon-PNG-Image-97643.png"
         />
-        <h1 className="pokedex_heading">Pokedéx </h1>
+        <h1 className="pokedex_heading">Pokédex </h1>
 
         <br></br>
-        <p className="pokedex_descriptor">Pokémon in your Pokdex</p>
+        <p className="pokedex_descriptor">Pokémon in your Pokédex</p>
 
         <div className="container_of_indiv_pokemon">
           <IndivPokemon

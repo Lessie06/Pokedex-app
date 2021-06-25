@@ -17,7 +17,7 @@ class Search extends React.Component{
         // const url = this.props.image;
         // const sprite = this.props.sprites;
         return(
-            <div>
+            <div >
             <h3> Abilities/type: {this.props.name}</h3>
            
             

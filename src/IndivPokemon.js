@@ -15,11 +15,11 @@ class IndivPokemon extends Component {
 
     
 
-    handleEdit = () => {
-        alert("You've clicked the edit button!")
+    // handleEdit = () => {
+    //     alert("You've clicked the edit button!")
         
 
-    }
+    // }
 
     handleDelete = (id) => {
         //alert("You've clicked the delete button!")
@@ -56,9 +56,9 @@ class IndivPokemon extends Component {
                 <p>{this.props.type}</p>
                 <p>{this.props.move}</p>
                 <p>{this.props.ability}</p>
-                <p>Region: {this.props.region}</p>
+                {/* <p>Region: {this.props.region}</p> */}
                 <form action="./UpdatePokemon">
-                <button onClick={this.handleEdit} className='indiv_pMon_button indiv_pMon_button_right'>Edit</button>
+                <button  className='indiv_pMon_button indiv_pMon_button_right'>Edit</button>
                 </form>
                 <button className='indiv_pMon_button ' onClick={() => {this.handleDelete(this.props.id)}}>Delete</button>
                 </div> : <div></div>

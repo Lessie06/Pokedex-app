@@ -1,5 +1,6 @@
 import React from "react";
 import "./styling/UpdatePokemon.css";
+import {Redirect} from 'react-router-dom'
 
 class UpdatePokemon extends React.Component {
   constructor(props) {
@@ -24,18 +25,24 @@ class UpdatePokemon extends React.Component {
     let editMove = document.getElementById("editMove").value;
     console.log(editName, editType, editMove, id);
 
-    await this.setState({ id: document.getElementById("id").value });
-    await this.setState({
-      changeName: document.getElementById("editName").value,
-    });
-    await this.setState({
-      changeType: document.getElementById("editType").value,
-    });
-    await this.setState({
-      changeMove: document.getElementById("editMove").value,
-    });
+    // await this.setState({ id: document.getElementById("id").value });
+    // await this.setState({
+    //   changeName: document.getElementById("editName").value,
+    // });
+    // await this.setState({
+    //   changeType: document.getElementById("editType").value,
+    // });
+    // await this.setState({
+    //   changeMove: document.getElementById("editMove").value,
+    // });
 
-    let values = this.state;
+    let values = {
+      id:id,
+      changeName: editName,
+      changeType: editType,
+      changeMove: editMove,
+
+    };
     console.log(values);
 
     fetch("http://localhost:5000/updatePokemon", {
@@ -45,7 +52,10 @@ class UpdatePokemon extends React.Component {
         "Content-type": "application/json",
       },
       body: JSON.stringify(values),
+     
     });
+    alert("Pokemon has been updated")
+    this.props.history.push("/Pokedex");
   };
 
   render() {
@@ -59,7 +69,9 @@ class UpdatePokemon extends React.Component {
           <h1 id="h1">Edit Pokemon: </h1>
           <form id="edit-form">
             <label>ID:</label>
+            <br></br>
             <input id="id" type="number" onChange={this.handleChange}></input>
+            <br></br>
             <br></br>
             <label id="name"> Update Name: </label>
             <br></br>

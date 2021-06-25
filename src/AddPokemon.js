@@ -12,7 +12,6 @@ class AddPokemon extends React.Component {
       pokeType: "",
       pokeMove: "",
       listOfPokemon: [],
-      
     };
     this.handleChange = this.handleChange.bind(this);
     // this.handleShowPokemon = this.handleShowPokemon.bind(this)
@@ -35,13 +34,11 @@ class AddPokemon extends React.Component {
     //   pokeMove: document.getElementById("pokeMove").value,
     // });
 
-
-
     let values = {
-        pokeName: name,
-       pokeType: type,
-         pokeMove: move,
-       }
+      pokeName: name,
+      pokeType: type,
+      pokeMove: move,
+    };
 
     console.log(values);
 
@@ -50,29 +47,26 @@ class AddPokemon extends React.Component {
       const rawResponse = await fetch("http://localhost:5000/addPokemon", {
         method: "POST",
         headers: {
-          'Accept': "application/json",
+          Accept: "application/json",
           "Content-type": "application/json",
         },
         mode: "cors",
         body: JSON.stringify(values),
-        
       });
 
       const content = await rawResponse.json();
 
       // console.log(content);
-       this.props.history.push('/Pokedex')
+      this.props.history.push("/Pokedex");
       // console.log(this.props.history)
-      
     })();
 
     alert("You've added the pokemon to the database");
-    
+
     //A redirect should occur now.
   };
 
   render() {
-   
     return (
       <div>
         <div id="pokemon-add">
