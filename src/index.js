@@ -9,8 +9,10 @@ import SearchPage from "./SearchPage";
 import Home from './Home';
 import Pokedex from './Pokedex'
 import DeletePokemon from './DeletePokemon'
+import Navbar from './Navbar';
 
-import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
+
+import { withRouter, BrowserRouter, Route, Link, Switch } from "react-router-dom";
 
 import reportWebVitals from "./reportWebVitals";
 import AddPokemon from "./AddPokemon";
@@ -19,26 +21,21 @@ import UpdatePokemon from "./UpdatePokemon";
 ReactDOM.render(
   <BrowserRouter>
     <div>
-      {/* nav bar can go here */}
-      <div id="nav-bar">
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/SearchPage">Search</Link>
-          </li>
-        </ul>
-      </div>
+      
+      <Navbar />
 
       {/* Links to different components go here*/}
       <Switch>
         <Route exact path="/" component={Home}></Route>
+        
         <Route path="/SearchPage" component={SearchPage} />
         <Route path="/AddPokemon" component={AddPokemon}/>
         <Route path='/Pokedex' component={Pokedex}></Route>
         <Route path="/UpdatePokemon" component={UpdatePokemon}/>
         <Route path="/DeletePokemon" component={DeletePokemon} />
+
+        {/* This is used for testing; Get rid of me */}
+        {/* <Route path='/testNavbar' component={Navbar} /> */}
       </Switch>
     </div>
   </BrowserRouter>,

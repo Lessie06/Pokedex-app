@@ -49,7 +49,7 @@ class IndivPokemon extends Component {
 
             {this.state.isVisible == true ?  <div class='card' key={this.props.id}>
                 
-                <h3>I'm an individual pokemon</h3>
+                <h3>Im an indivdual pokemon</h3>
                 <img src={this.props.image} id='indiv_pMon_image' class='indiv_pMon_img_contraints'/><br></br>
                 {isNaN(this.props.id) ? <div></div> : <p>ID:  {this.props.id}</p>}
                 <b>{this.props.name}</b>

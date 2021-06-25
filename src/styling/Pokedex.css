@@ -6,13 +6,13 @@
 .floatLeft { float: left; }
 .floatRight { float: right; }
 
-#pokedx_pokeball{
+#pokedx_pokeball{   /* this is the pBall in the banner */
+    padding: 3%;
     image-rendering: auto;
     max-width: 11%;
     max-height: 11%;
     /*transform: rotate(-10deg);*/
     padding-left: 7%;
-    
     
 }
 .pokedex_heading {
@@ -23,6 +23,7 @@
     font-size: 450%;
 }
 #pokedex_evee_top_of_page {
+    padding: 3%;
     max-width: 12%;
     max-height: 12%;   
     padding-right: 10%;
